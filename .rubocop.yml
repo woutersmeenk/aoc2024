@@ -1,0 +1,101 @@
+AllCops:
+  # Exclude:
+  TargetRubyVersion: 3.3.5
+  NewCops: enable
+
+### Layout cops:
+# We prefer consistent 2 space indendation, because we find that more readable
+# and do not want to change indentation when only changing the method or first parameter name.
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/LineEndStringConcatenationIndentation:
+  EnforcedStyle: indented
+
+Layout/LineLength:
+  Max: 120
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+
+# Overridden because we prefer always closing a hash on a new line for consistency.
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: new_line
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+  IndentationWidth: 2
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/LineContinuationSpacing:
+  EnforcedStyle: no_space
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# Disabled because our specs are the documentation.
+Style/Documentation:
+  Enabled: false
+
+# Overridden because we prefer always closing a method on a new line for consistency.
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+# Overridden because we use the bracket style a lot, e.g. in before_actions in controllers.
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+### Trailing comma cops:
+# Overridden because we don't want to have to add a comma to the previous line when adding a new one.
+# This makes for clearer commits and a more correct git blame.
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
